@@ -21,13 +21,15 @@
 11. Adicione a chave `BUCKET` e o valor `base-config-<SEU RM>` e clique em salvar
     ![](img/env-var-lambda.png)
 12. Clique em `Salvar` no canto superior direito.
-13. Na aba do cloudformation, crie uma stack utlizando o arquivo `macro_cfn.yml` que subiu no S3. De o nome da stack de `macro-ec2-ssh-key` e copie o ARN da récem criada função lambda para colar no campo FunctionArn
+13. Ainda no painel do lambda clique na aba `configuração` e em seguida `editar`
+14. Altere o tempo limite para `1 min e 3 seg` e salve. Caso não faça isso sua função pode executar com falha por timeout.
+15. Na aba do cloudformation, crie uma stack utlizando o arquivo `macro_cfn.yml` que subiu no S3. De o nome da stack de `macro-ec2-ssh-key` e copie o ARN da récem criada função lambda para colar no campo FunctionArn
     ![](img/stack-macro-details.png)
 14. Agora crie uma stack com o arquivo `macro_ec2.yml` que esta no S3
 15. De o nome de `ec2-using-macro`
 16. Copie e cole o ARN da função lambda récem criada, escolha a VPC e subnet
     ![](img/stack-ec2-details.png)
 17. Avance e crie.
-18. Dessa vez não foi preciso adicionar o custon resources direto no código que subiu a EC2. A macro criada capta o valor da key que consta Auto-Generate e adiciona o código da Macro com o custom resources e a chave é criada.
+18. Dessa vez não foi preciso adicionar o custom resources direto no código que subiu a EC2. A macro criada capta o valor da key que consta Auto-Generate e adiciona o código da Macro com o custom resources e a chave é criada.
 19. Delete a Stack
     
