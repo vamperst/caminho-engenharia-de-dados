@@ -40,6 +40,8 @@ sls invoke --function getObject --stage dev --region us-east-1 --path event.json
 #     "key": "other/factbook.tst"
 # }
 
+sls remove
+
 
 SELECT * FROM s3object s WHERE s._1 like '%Chevrolet%';
 
