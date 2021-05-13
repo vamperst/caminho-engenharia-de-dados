@@ -1,4 +1,8 @@
-export bucket=$bucket 
+cd caminho-engenharia-de-dados/
+git pull origin master
+cd 03-Storage/
+
+export bucket=random-bucket-s3-pan
 
 curl https://perso.telecom-paristech.fr/eagan/class/igr204/data/cereal.csv -o cereal.csv 
 curl https://perso.telecom-paristech.fr/eagan/class/igr204/data/cars.csv -o car.csv
@@ -19,6 +23,7 @@ aws s3 cp factbook.csv s3://$bucket/other/factbook.tst
 
 cd lambda
 
+nom install -g serverless
 npm install serverless-pseudo-parameters
 
 sls deploy

@@ -2,6 +2,8 @@ service: s3-lab
 
 plugins:
   - serverless-pseudo-parameters
+custom:
+  bucket: random-bucket-s3-pan
 
 provider:
   name: aws
@@ -16,8 +18,8 @@ provider:
             - 's3:GetObject'
             - 's3:ListBucket'
           Resource:
-            - arn:aws:s3:::teste-storage-random/factbook/*
-            - arn:aws:s3:::teste-storage-random/factbook
+            - arn:aws:s3:::${self:custom.bucket}/factbook/*
+            - arn:aws:s3:::${self:custom.bucket}/factbook
             
 
 functions:
