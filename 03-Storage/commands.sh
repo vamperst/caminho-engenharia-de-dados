@@ -30,6 +30,16 @@ sls deploy
 
 sls invoke --function getObject --stage dev --region us-east-1 --path event.json --log
 
+# alterar arquivo para arn:aws:s3:::${self:custom.bucket}/*.tst     arn:aws:s3:::random-bucket-s3-pan/
+# {
+#     "bucket":"random-bucket-s3-pan",
+#     "key": "factbook/factbook.csv"
+# }
+# {
+#     "bucket":"random-bucket-s3-pan",
+#     "key": "other/factbook.tst"
+# }
+
 
 SELECT * FROM s3object s WHERE s._1 like '%Chevrolet%';
 
