@@ -1,0 +1,14 @@
+{
+    "DeliveryStreamName": "susep-ingest",
+    "DeliveryStreamType": "DirectPut",
+    "ExtendedS3DestinationConfiguration": {
+        "RoleARN": "ROLEFIREHOSEARN",
+        "BucketARN": "arn:aws:s3:::NOMEBUCKET",
+        "Prefix": "ingested-json/",
+        "ErrorOutputPrefix": "error-ingested-json/",
+        "BufferingHints": {
+            "SizeInMBs": 100,
+            "IntervalInSeconds": 300
+        }
+    }
+}

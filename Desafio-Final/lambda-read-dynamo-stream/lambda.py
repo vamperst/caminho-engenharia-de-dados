@@ -26,4 +26,4 @@ def handler(event, context):
         # item["UserID"] = rec["UserID"]["S"]
         # item["SKU"] = rec["SKU"]["S"]
 
-        deliveryStream.put_record(json.dumps(item))
+        deliveryStream.put_record([json.dumps(item)])

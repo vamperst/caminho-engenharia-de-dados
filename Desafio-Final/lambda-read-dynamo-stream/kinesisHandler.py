@@ -13,7 +13,7 @@ class KinesisHandler:
         for line in listLine:
             listData.append(
                 {
-                    "Data": line + os.linesep
+                    "Data": line
                 }
             )
 
